@@ -1,0 +1,69 @@
+@import "tailwindcss";
+.myphotos{
+    background-image: url("/photos/myphotos/my01.jpg");
+    background-size: cover;
+    animation: about_photos 10s ease-in-out infinite;
+}
+@keyframes about_photos {
+  
+  from {
+      background-image: url("/photos/myphotos/my01.jpg");
+       background-size: cover;
+   
+  }
+  20%{
+    background-image: url("/photos/myphotos/my02.jpg");
+       background-size: cover;
+
+  }
+
+
+  40% {
+   background-image: url("/photos/myphotos/my03.jpg");
+       background-size: cover;
+  }
+  60%{
+    background-image: url("/photos/myphotos/my04.jpg");
+       background-size: cover;
+
+  }
+  80%{
+    background-image: url("/photos/myphotos/my05.jpg");
+       background-size: cover;
+
+  }
+
+
+  
+  to {
+ background-image: url("/photos/myphotos/mycamera.JPG");
+       background-size: cover;
+  }
+}
+/* video  */
+.back-video {
+position:relative;
+right:0;
+bottom:0;
+width: 100%;
+height:15rem;
+
+
+
+  
+
+}
+@media (min-aspect-ratio:16/9) {
+  .back-video{
+    width:100%;
+    height:auto;
+  }
+  
+}
+@media (max-aspect-ratio:16/9) {
+  .back-video{
+    width:auto;
+    height:auto;
+  }
+  
+}
