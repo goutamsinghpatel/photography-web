@@ -81,3 +81,13 @@ try {
 }
 
 }
+export const isAuth=async(req,res)=>{
+    try {
+     return   res.json({success:true,message:"you are authenticate"})
+        
+    } catch (error) {
+return res.json({success:false,message:error.message});
+        
+    }
+
+}

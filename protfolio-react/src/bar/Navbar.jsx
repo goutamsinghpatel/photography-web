@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import './bar.css'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import {NavLink} from 'react-router-dom';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LogoutIcon from '@mui/icons-material/Logout';
+import {NavLink, useNavigate} from 'react-router-dom';
+import { AppContent } from '../context/AppContext';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 
 
@@ -12,8 +16,39 @@ import {NavLink} from 'react-router-dom';
 const navLinkClasses = 'text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out';
 
 const Navbar= () => {
+  const navigate=useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const {isLoggedin,setIsLoggedin,backendUrl,userData,setUserData,adminToken,setAdminToken}= useContext(AppContent);
+  const logout=async()=>
+  {
+ try {
+     axios.defaults.withCredentials=true;
+const {data}=await axios.post(backendUrl+'/api/auth/logout')
+if(data.success){
+setIsLoggedin(false);
+setUserData(false)
+
+setAdminToken(false);
+
+
+   navigate("/")
+
+   
+
+
+}
+else{
+  toast.error(data.message);
+}
+   
+  
+ } catch (error) {
+  toast.error(error.message);
+  
+ }
+    
+  }
 
   // Function to toggle mobile menu
   const toggleMenu = () => {
@@ -89,8 +124,12 @@ const Navbar= () => {
                     </div>
                   )}
                 </div>
-                
-                <NavLink to="#login" className={navLinkClasses}>Login <ArrowRightAltIcon/></NavLink>
+                {userData?<> < p style={{ cursor:"pointer" }} className={navLinkClasses}> <AccountCircleIcon/> </p> 
+              {adminToken && <NavLink to="login" className={navLinkClasses}> New user</NavLink> }
+                 <p onClick={logout} 
+                className={navLinkClasses} style={{ cursor:"pointer"
+                }}>Log-out <LogoutIcon/></p></> : <NavLink to="login" className={navLinkClasses}><AccountCircleIcon/></NavLink>}
+               
                 
               </div>
             </div>
@@ -145,8 +184,9 @@ const Navbar= () => {
                 </div>
               )}
             </div>
-            
-            <NavLink to="#login" className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Login</NavLink>
+               {userData?<> <NavLink to="login" className={navLinkClasses}><AccountCircleIcon/></NavLink> <p onClick={logout} className={navLinkClasses} style={{
+                  cursor:"pointer"
+                }}>Log-out <LogoutIcon/></p></> : <NavLink to="login" className={navLinkClasses}><AccountCircleIcon/></NavLink>}
           </div>
         </div>
       )}

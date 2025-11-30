@@ -1,6 +1,0 @@
-@import "tailwindcss";
-a{
-    @apply    hover:hover:text-amber-300;
-    
-}
-

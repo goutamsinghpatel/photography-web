@@ -11,7 +11,8 @@ const port=4000;
 connectDb();
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors());
+const allowdOrigin=["http://localhost:5173"]
+app.use(cors({origin:allowdOrigin,credentials:true}));
 app.get("/",(req,res)=>{
     res.send(`server stated in port ${port}`);
 })
