@@ -4,6 +4,7 @@ import './bar.css'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import StarBorderPurple500Icon from '@mui/icons-material/StarBorderPurple500';
 import LogoutIcon from '@mui/icons-material/Logout';
 import {NavLink, useNavigate} from 'react-router-dom';
 import { AppContent } from '../context/AppContext';
@@ -27,6 +28,7 @@ const Navbar= () => {
 const {data}=await axios.post(backendUrl+'/api/auth/logout')
 if(data.success){
 setIsLoggedin(false);
+
 setUserData(false)
 
 setAdminToken(false);
@@ -48,6 +50,21 @@ else{
   
  }
     
+  }
+  const showUserData=async()=>{
+    try {
+      if(adminToken){
+        navigate('/All-users')
+      }
+      else {
+        navigate("/images")
+      }
+      
+    } catch (error) {
+      toast.error(error.message);
+      
+    }
+
   }
 
   // Function to toggle mobile menu
@@ -124,7 +141,8 @@ else{
                     </div>
                   )}
                 </div>
-                {userData?<> < p style={{ cursor:"pointer" }} className={navLinkClasses}> <AccountCircleIcon/> </p> 
+              <NavLink to="/Booking" className={navLinkClasses}>Book <StarBorderPurple500Icon/></NavLink>
+                {userData?<> < p style={{ cursor:"pointer" }}onClick={showUserData} className={navLinkClasses}> <AccountCircleIcon/> </p> 
               {adminToken && <NavLink to="login" className={navLinkClasses}> New user</NavLink> }
                  <p onClick={logout} 
                 className={navLinkClasses} style={{ cursor:"pointer"
@@ -184,8 +202,12 @@ else{
                 </div>
               )}
             </div>
-               {userData?<> <NavLink to="login" className={navLinkClasses}><AccountCircleIcon/></NavLink> <p onClick={logout} className={navLinkClasses} style={{
-                  cursor:"pointer"
+             <NavLink to="/Booking" className={navLinkClasses}>Book <StarBorderPurple500Icon/></NavLink>
+             <br></br>
+           {userData?<> < p style={{ cursor:"pointer" }} className={navLinkClasses}> <AccountCircleIcon/> </p> 
+              {adminToken && <NavLink to="login" className={navLinkClasses}> New user</NavLink> }
+                 <p onClick={logout} 
+                className={navLinkClasses} style={{ cursor:"pointer"
                 }}>Log-out <LogoutIcon/></p></> : <NavLink to="login" className={navLinkClasses}><AccountCircleIcon/></NavLink>}
           </div>
         </div>

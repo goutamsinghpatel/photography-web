@@ -1,6 +1,8 @@
 import bcrypt from 'bcryptjs';
 import  jwt  from "jsonwebtoken";
 import userModel from '../models/user.js';
+import {Resend} from "resend";
+const  resend=new Resend(process.env.RESEND_KEY);
 
 
 export const registerUser=async(req,res)=>{
@@ -89,5 +91,28 @@ export const isAuth=async(req,res)=>{
 return res.json({success:false,message:error.message});
         
     }
+
+}
+export const EmailSend=async(req,res)=>{
+try {
+        const {name,mobile,message}=req.body
+    await resend.emails.send({
+        from:"Website <wensite@resend.dev>",
+to:process.env.GMAIL,
+subject: `New Message from ${name}`,
+
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Number:</strong> ${mobile}</p>
+        <p><strong>Message:</strong><br/>${message}</p>`
+  
+    })
+    res.json({success:true});
+    
+} catch (error) {
+    return res.json({success:false,message:error.message})
+    
+}
 
 }

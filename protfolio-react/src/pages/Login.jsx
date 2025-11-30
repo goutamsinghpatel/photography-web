@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 export default function Login(){
     const navigate=useNavigate();
-    const {backendUrl, isLoggedin,setIsLoggedin,adminToken, getUserData}=useContext(AppContent);
+    const {backendUrl, isLoggedin,setIsLoggedin,adminToken,userData, getUserData}=useContext(AppContent);
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("")
     const [name,setName]=useState("");
@@ -34,7 +34,9 @@ export default function Login(){
       if(data.success){
         setIsLoggedin(true);
         navigate("/")
+
         getUserData()
+      
         
       }
       else{
@@ -62,10 +64,10 @@ return(
         
         <div className="mb-8">
           <h1 className="text-3xl font-semibold text-white tracking-tight">
-            Welcome 
+           {adminToken ? "Register" : "Welcome" }
           </h1>
           <p className="mt-2 text-sm text-slate-300">
-            Sign in to your account to continue.
+           {adminToken ?"create one acount" : "Sign in to your account to continue."}
           </p>
         </div>
 
