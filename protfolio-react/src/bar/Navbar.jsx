@@ -124,15 +124,12 @@ else{
                          >Wedding-shoot</NavLink>
                   <NavLink to="/Pre-Wedding" className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
                           >Pre-Wedding</NavLink>
-                    <NavLink to="/Candid" className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
-                       >Candid</NavLink>
-                  <NavLink to="/Cinematic" className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
-                         >Cinematic</NavLink>
-                    <NavLink to="/Drone" className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
-                         >Drone</NavLink>
+                   
+          
+                 
                   <NavLink to="/Reels" className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
                          >Reels</NavLink>
-                   <NavLink to="Modeling-Shoot" className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
+                   <NavLink to="/modeling" className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
                         >Modeling-Shoot</NavLink>
                     <NavLink to="/Baby-Shoot" className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
                           >Baby-Shoot</NavLink>
@@ -143,10 +140,10 @@ else{
                 </div>
               <NavLink to="/Booking" className={navLinkClasses}>Book <StarBorderPurple500Icon/></NavLink>
                 {userData?<> < p style={{ cursor:"pointer" }}onClick={showUserData} className={navLinkClasses}> <AccountCircleIcon/> </p> 
-              {adminToken && <NavLink to="login" className={navLinkClasses}> New user</NavLink> }
+              {adminToken && <NavLink to="/login" className={navLinkClasses}> New user</NavLink> }
                  <p onClick={logout} 
                 className={navLinkClasses} style={{ cursor:"pointer"
-                }}>Log-out <LogoutIcon/></p></> : <NavLink to="login" className={navLinkClasses}><AccountCircleIcon/></NavLink>}
+                }}>Log-out <LogoutIcon/></p></> : <NavLink to="/login" className={navLinkClasses}><AccountCircleIcon/></NavLink>}
                
                 
               </div>
@@ -178,7 +175,7 @@ else{
       {isMenuOpen && (
         <div className="md:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <NavLink to="#about" className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">About</NavLink>
+            <NavLink to="/about" className="text-white hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">About</NavLink>
             
             {/* Services Dropdown - Mobile Toggle */}
             <div className="relative">
@@ -193,11 +190,8 @@ else{
                 <div className="mt-1 space-y-1 pl-4">
                   <NavLink to="/Wedding-shoot" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Wedding-shoot</NavLink>
                   <NavLink to="/Pre-Wedding" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Pre-Wedding</NavLink>
-                    <NavLink to="/Candid" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Candid</NavLink>
-                  <NavLink to="/Cinematic" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Cinematic</NavLink>
-                    <NavLink to="/Drone" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Drone</NavLink>
                   <NavLink to="/Reels" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Reels</NavLink>
-                   <NavLink to="Modeling-Shoot" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Modeling-Shoot</NavLink>
+                   <NavLink to="/modeling" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Modeling-Shoot</NavLink>
                     <NavLink to="/Baby-Shoot" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Baby-Shoot</NavLink>
                 </div>
               )}
@@ -205,10 +199,10 @@ else{
              <NavLink to="/Booking" className={navLinkClasses}>Book <StarBorderPurple500Icon/></NavLink>
              <br></br>
            {userData?<> < p style={{ cursor:"pointer" }} className={navLinkClasses}> <AccountCircleIcon/> </p> 
-              {adminToken && <NavLink to="login" className={navLinkClasses}> New user</NavLink> }
+              {adminToken && <NavLink to="/login" className={navLinkClasses}> New user</NavLink> }
                  <p onClick={logout} 
                 className={navLinkClasses} style={{ cursor:"pointer"
-                }}>Log-out <LogoutIcon/></p></> : <NavLink to="login" className={navLinkClasses}><AccountCircleIcon/></NavLink>}
+                }}>Log-out <LogoutIcon/></p></> : <NavLink to="/login" className={navLinkClasses}><AccountCircleIcon/></NavLink>}
           </div>
         </div>
       )}

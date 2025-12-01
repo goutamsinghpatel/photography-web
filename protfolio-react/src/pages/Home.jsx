@@ -17,7 +17,7 @@ export  default function Home(){
     return(
         <>
         <Navbar/>
-        <Image/>
+        <Image img={"/photos/bg_photo.jpg"}/>
         <About_Home/>
         <div className="mt-5">
           <Home_Hero />

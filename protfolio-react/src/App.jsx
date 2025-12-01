@@ -2,7 +2,7 @@
 import {Routes} from 'react-router-dom'
 import { Route } from 'react-router-dom'
 import Home from './pages/Home'
-import Baby_shoot from './pages/Baby_shoot'
+
 import Wedding_shoot from './pages/Wedding_shoot'
 import Reels from './pages/Reels'
 import PreWedding from './pages/PreWedding'
@@ -14,6 +14,7 @@ import AllUsers from './pages/AllUsers'
 import UploadImage from './pages/UploadImage'
 import UserImagesPage from './pages/UserImagesPage'
 import BookingPage from './pages/BookingPage'
+import PageNotFound from './pages/PageNotFound'
 function App() {
   
 
@@ -24,9 +25,8 @@ function App() {
   <Route path="/" element={<Home/>}/>
    <Route path="/about" element={<Home/>}/>
     <Route path="/wedding-shoot" element={<Wedding_shoot/>}/>
-  <Route path="/preWedding" element={<PreWedding/>}/>
+  <Route path="/Pre-Wedding" element={<PreWedding/>}/>
   <Route path="/reels" element={<Reels/>}/>
-  <Route path="/Baby-shoot" element={<Baby_shoot/>}/>
     <Route path="/modeling" element={<Modeling/>}/>
 <Route path="/login" element={<Login/>}/>
 <Route path="/images" element={<UserImages/>}/>
@@ -34,6 +34,7 @@ function App() {
 <Route path="/upload-image" element={<UploadImage />} />
 <Route path="/user-images" element={<UserImagesPage />} />
 <Route path="Booking" element={<BookingPage/>}/>
+ <Route path='/*' element={<PageNotFound/>}/>
 
 
 </Routes> 

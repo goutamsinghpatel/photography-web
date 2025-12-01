@@ -87,7 +87,7 @@ export default function About_Home() {
                                 variants={itemVariants}
                             >
                                 <AddLocationAltIcon className='mr-2' />
-                                <a href="https://maps.app.goo.gl/C7CuLjn5zcfPdUju9?g_st=ipc">Location: Balsamub (Kasrawad)</a>
+                                <a href="https://maps.app.goo.gl/C7CuLjn5zcfPdUju9?g_st=ipc">Location: Balsamud (Kasrawad)</a>
                             </motion.div>
                         </div>
                     </motion.div>

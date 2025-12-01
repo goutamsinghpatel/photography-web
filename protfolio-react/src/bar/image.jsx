@@ -1,8 +1,8 @@
-export default function Image(){
+export default function Image({img}){
     return(
         <>
         <div>
-            <img src="/photos/bg_photo.jpg"></img>
+            <img src={img}></img>
         </div>
         </>
 

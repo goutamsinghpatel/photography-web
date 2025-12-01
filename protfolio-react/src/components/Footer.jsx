@@ -59,9 +59,11 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3">
               <li><NavLink to="/wedding-shoot" className="text-sm hover:text-white transition-colors duration-200">Wedding</NavLink></li>
-              <li><NavLink to="/preWedding" className="text-sm hover:text-white transition-colors duration-200">Pre-wedding</NavLink></li>
+              <li><NavLink to="/Pre-Wedding" className="text-sm hover:text-white transition-colors duration-200">Pre-wedding</NavLink></li>
               <li><NavLink to="/reels" className="text-sm hover:text-white transition-colors duration-200">reels</NavLink></li>
               <li><NavLink to="/Baby-shoot" className="text-sm hover:text-white transition-colors duration-200">Baby-shoot</NavLink></li>
+                            <li><NavLink to="/modeling" className="text-sm hover:text-white transition-colors duration-200">modeling</NavLink></li>
+
             </ul>
           </div>
 
