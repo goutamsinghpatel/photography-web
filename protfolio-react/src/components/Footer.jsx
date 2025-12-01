@@ -26,7 +26,7 @@ const Footer = () => {
           {/* Logo/Studio Name Section */}
           <div className="col-span-2 md:col-span-1">
             <h3 className="text-xl font-bold text-white tracking-wider">
-              Prabhat Malvi Studio
+              Prabhat  Studio
             </h3>
             <p className="mt-4 text-sm max-w-xs">
               Capturing moments with light and vision. Specializing in wedding, portrait, and commercial photography.

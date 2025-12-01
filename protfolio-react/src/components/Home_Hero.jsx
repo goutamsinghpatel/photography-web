@@ -42,9 +42,9 @@ export default function Home_Hero({ image }) {
             />
           </motion.div>
 
-         
-          <motion.div
-            className="lg:w-[35rem] md:w-[30rem] sm:w-[25rem] rounded-2xl hover:shadow-xl shadow-white/20"
+       
+           <motion.div
+            className="lg:w-[30rem] md:w-[25rem] sm:w-[20rem] rounded-2xl hover:shadow-xl shadow-white/20"
             variants={imageAnimationVariants}
             initial="hidden"
             whileInView="visible"
@@ -54,13 +54,12 @@ export default function Home_Hero({ image }) {
               stiffness: 100,
               damping: 15,
               duration: 1.5,
-              delay: 0.2,
             }}
           >
             <img
-              className="lg:w-full md:w-full md:mt-5 sm:mt-15 sm:w-full rounded-2xl h-[35rem]"
+              className="lg:w-full md:w-full sm:w-full rounded-2xl h-[35rem]"
               src="/photos/HomePage/home-page06.jpg"
-              alt="Home Page 06"
+              alt="Home Page 01"
             />
           </motion.div>
         </div>
