@@ -198,7 +198,7 @@ else{
             </div>
              <NavLink to="/Booking" className={navLinkClasses}>Book <StarBorderPurple500Icon/></NavLink>
              <br></br>
-           {userData?<> < p style={{ cursor:"pointer" }} className={navLinkClasses}> <AccountCircleIcon/> </p> 
+           {userData?<> < p style={{ cursor:"pointer" }} onClick={showUserData} className={navLinkClasses}> <AccountCircleIcon/> </p> 
               {adminToken && <NavLink to="/login" className={navLinkClasses}> New user</NavLink> }
                  <p onClick={logout} 
                 className={navLinkClasses} style={{ cursor:"pointer"
