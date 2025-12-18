@@ -10,6 +10,7 @@ export const AppContextProvider=(props)=>{
         const[isLoggedin,setIsLoggedin]=useState(false);
          const[userData,setUserData]=useState(false);
          const[adminToken,setAdminToken]=useState(false);
+ 
          const getAuthState=async()=>{
         try {
             const {data}=await axios.post(backendUrl+'/api/auth/is-auth')
@@ -56,13 +57,14 @@ export const AppContextProvider=(props)=>{
 
 getAuthState();
 
-},[])
+})
     const value={
         backendUrl,
         isLoggedin,setIsLoggedin,
         userData,setUserData,
         adminToken,setAdminToken,
         getUserData
+    
     
 
     }
