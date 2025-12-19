@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { motion } from "framer-motion";
 
 export default function AllUsers() {
-  const { userData, adminToken, backendUrl } = useContext(AppContent);
+  const { userData, adminToken, backendUrl, getUserData } = useContext(AppContent);
   const navigate = useNavigate();
 
   const deleteUser = async (email) => {
@@ -17,6 +17,8 @@ export default function AllUsers() {
 
       if (data.success) {
         navigate("/");
+        getUserData() //19
+        toast.success("delete user");
       } else {
         toast.error(data.message);
       }
@@ -137,11 +139,15 @@ export default function AllUsers() {
                   Delete User
                 </button>
                 
+                
               </div>
             </div>
           </motion.div>
+          
         ))}
       </div>
     </div>
   );
 }
+
+

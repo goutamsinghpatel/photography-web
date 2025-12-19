@@ -11,7 +11,7 @@ export default function UserImagesPage() {
   const navigate = useNavigate();
   const email = new URLSearchParams(location.search).get("email");
 
-  const { userData, backendUrl } = useContext(AppContent);
+  const { userData, backendUrl, getUserData } = useContext(AppContent);
 
   // jis user ka email match kare
   const user = useMemo(() => {
@@ -23,6 +23,7 @@ export default function UserImagesPage() {
 
   useEffect(() => {
     if (user) {
+      getUserData(); //19
       // tumhare getData me image: [...] aa raha tha
       const raw =
         (Array.isArray(user.image) && user.image) ||
@@ -54,6 +55,7 @@ export default function UserImagesPage() {
 
       if (data.success) {
         // state se image hata do
+        // getUserData();
         setPhotos((prev) =>
           prev.filter((p) => p.id !== imageId && p._id !== imageId)
         );

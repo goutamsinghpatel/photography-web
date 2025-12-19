@@ -15,6 +15,8 @@ import UploadImage from './pages/UploadImage'
 import UserImagesPage from './pages/UserImagesPage'
 import BookingPage from './pages/BookingPage'
 import PageNotFound from './pages/PageNotFound'
+import BabyShoot from './pages/BabyShoot'
+
 function App() {
   
 
@@ -26,8 +28,9 @@ function App() {
    <Route path="/about" element={<Home/>}/>
     <Route path="/wedding-shoot" element={<Wedding_shoot/>}/>
   <Route path="/Pre-Wedding" element={<PreWedding/>}/>
-  <Route path="/reels" element={<Reels/>}/>
+  <Route path="/Reels" element={<Reels/>}/>
     <Route path="/modeling" element={<Modeling/>}/>
+    <Route path="/baby-shoot" element={<BabyShoot/>}/>
 <Route path="/login" element={<Login/>}/>
 <Route path="/images" element={<UserImages/>}/>
 <Route path="/All-users" element={<AllUsers/>}/>

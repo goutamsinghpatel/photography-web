@@ -131,7 +131,7 @@ else{
                          >Reels</NavLink>
                    <NavLink to="/modeling" className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
                         >Modeling-Shoot</NavLink>
-                    <NavLink to="/Baby-Shoot" className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
+                    <NavLink to="/baby-shoot" className="block px-4 py-2 text-sm text-white hover:bg-gray-700"
                           >Baby-Shoot</NavLink>
 
                       </div>
@@ -192,7 +192,7 @@ else{
                   <NavLink to="/Pre-Wedding" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Pre-Wedding</NavLink>
                   <NavLink to="/Reels" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Reels</NavLink>
                    <NavLink to="/modeling" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Modeling-Shoot</NavLink>
-                    <NavLink to="/Baby-Shoot" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Baby-Shoot</NavLink>
+                    <NavLink to="/baby-shoot" className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium">Baby-Shoot</NavLink>
                 </div>
               )}
             </div>
